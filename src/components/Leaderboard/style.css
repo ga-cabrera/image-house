@@ -1,0 +1,48 @@
+.lead-meme {
+    margin: 0 4px;
+}
+.lead-meme-img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.lead-meme .fa-thumbs-up {
+    margin-right: 3px;
+}
+
+@media only screen and (max-width: 680px) {
+    .lead-meme-img {
+        padding-right: 10px;
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .leaderboard-container {
+        margin-top: 0.5rem;
+    }
+    .scrolling-wrapper {
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .scrolling-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+    .scrolling-wrapper .lead-meme {
+        display: inline-block;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .leaderboard {
+        height: 400px;
+        overflow: auto;
+    }
+    .lead-meme-img {
+        height: 125px;
+        width: 125px;
+    }
+} 

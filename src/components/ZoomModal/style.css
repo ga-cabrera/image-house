@@ -1,0 +1,18 @@
+.zoom-modal .modal-content .social-section .like-button {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.zoom-modal .modal-content {
+    width: auto;
+}
+
+.modal-content .image > img {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.social-section {
+    padding: 5px 6px;
+}
