@@ -3,6 +3,9 @@ const express = require('express');
 var cors = require('cors');
 const bodyParser = require('body-parser');
 const Data = require('./backend/collections/data');
+const { Server } = require('ws');
+
+const wss = new Server({ server });
 
 const API_PORT = process.env.PORT || 3001;
 const app = express();
@@ -117,6 +120,16 @@ router.post('/putData', (req, res) => {
 });
 
 app.use('/api', router);
+
+wss.on('connection', (ws) => {
+  console.log('Client connected');
+  ws.on('close', () => console.log('Client disconnected'));
+});
+setInterval(() => {
+  wss.clients.forEach((client) => {
+    client.send(new Date().toTimeString());
+  });
+}, 1000);
 
 // launch our backend into a port
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
